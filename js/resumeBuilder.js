@@ -61,9 +61,9 @@ var projects = {
 
 bio.display = function() {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
-    $("#header").append(formattedName);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    $("#header").append(formattedRole);
+    var formattedNameRole = formattedName + formattedRole;
+    $("#header").prepend(formattedNameRole);
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedBioPic);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
