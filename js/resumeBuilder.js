@@ -8,6 +8,7 @@ var bio = {
         "twitter": "@BretPrins",
         "Location": "Edmonton"
     },
+    "welcomeMessage": "Hey there! Welcome to my first attempt at javascript",
     "skills": ["HTML", "CSS", "JavaScript", "UX Design", "Cisco LAN Networks"],
     "biopic": "images/me.jpg"
 };
@@ -19,9 +20,22 @@ var education = {
             "major": "Digital Media IT"
         },
         {
-            "name": "NAIT",
+            "name": "Cisco",
             "location": "Edmonton",
             "major": "Cisco CCNA"
+        }
+    ],
+    "onlineCourses": [{
+            "title": "CS50 Programming",
+            "school": "Harvard",
+            "dates": "December 2015",
+            "url": "https://cs50.harvard.edu/"
+        },
+        {
+            "title": "Nanodegree Frontend Developer",
+            "school": "Udacity",
+            "dates": "In progress",
+            "url": "https://www.udacity.com/"
         }
     ]
 };
@@ -39,7 +53,7 @@ var work = {
             "title": "Lifeguard",
             "location": "St. Albert",
             "date": "2006 - 2010",
-            "description": "Ensuring public safety and a fantastic customer exoerience at the pools."
+            "description": "Ensuring public safety and a fantastic customer experience at the pool."
         }
     ]
 };
@@ -48,7 +62,7 @@ var projects = {
     "project": [{
             "title": "Google Chromebooks",
             "date": "2016",
-            "description": "Implementing new process and documentation for Google chromebook hardware throughout the schools practies."
+            "description": "Implementing new process and documentation for Google chromebook hardware throughout the schools practices."
         },
         {
             "title": "Backend hardware refresh",
@@ -141,6 +155,19 @@ education.display = function() {
         $(".education-entry:last").append(formattedschoolLocation);
         var formattedschoolMajor = HTMLschoolMajor.replace('%data%', education.schools[index].major);
         $(".education-entry:last").append(formattedschoolMajor);
+    }
+
+          $(".education-entry:last").append(HTMLonlineClasses);
+
+    for (var index = 0; index <education.onlineCourses.length; index++) {
+      var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[index].title);
+      $(".education-entry:last").append(formattedOnlineTitle);
+      var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[index].school);
+      $(".education-entry:last").append(formattedOnlineSchool);
+      var formattedOnlineDate = HTMLonlineDates.replace('%data%', education.onlineCourses[index].dates);
+      $('.education-entry:last').append(formattedOnlineDate);
+      var formattedUrl = HTMLonlineURL.replace('%data%', education.onlineCourses[index].url);
+      $('.education-entry:last').append(formattedUrl);
     }
 }
 education.display();
