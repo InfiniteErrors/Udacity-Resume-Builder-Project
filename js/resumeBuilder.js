@@ -139,7 +139,7 @@ projects.display = function() {
         $(".project-entry:last").append(formattedProjectDate);
         var formattedProDes = HTMLprojectDescription.replace("%data%", projects.project[index].description);
         $(".project-entry:last").append(formattedProDes);
-        var formattedImg = HTMLprojectImage.replace("%data%", projects.project[index].img);
+        var formattedImg = HTMLprojectImage.replace("%data%", projects.project[index].imgs);
         $(".project-entry:last").append(formattedImg);
     }
 }
