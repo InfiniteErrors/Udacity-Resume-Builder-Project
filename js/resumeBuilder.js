@@ -62,12 +62,14 @@ var projects = {
     "project": [{
             "title": "Google Chromebooks",
             "date": "2016",
-            "description": "Implementing new process and documentation for Google chromebook hardware throughout the schools practices."
+            "description": "Implementing new process and documentation for Google chromebook hardware throughout the schools practices.",
+            "imgs": "images/google.jpg"
         },
         {
             "title": "Backend hardware refresh",
             "date": "2013",
-            "description": "Replace entire backend infrustructure with new equipment and implement virtualized services via VMware."
+            "description": "Replace entire backend infrustructure with new equipment and implement virtualized services via VMware.",
+            "imgs": "images/cisco.jpg"
         }
     ]
 };
@@ -129,17 +131,16 @@ work.display();
 projects.display = function() {
 
     for (var index = 0; index < projects.project.length; index++) {
-
         $("#projects").append(HTMLprojectStart);
 
         var formattedProTitle = HTMLprojectTitle.replace("%data%", projects.project[index].title);
         $(".project-entry:last").append(formattedProTitle);
-
         var formattedProjectDate = HTMLprojectDates.replace("%data%", projects.project[index].date);
         $(".project-entry:last").append(formattedProjectDate);
-
         var formattedProDes = HTMLprojectDescription.replace("%data%", projects.project[index].description);
         $(".project-entry:last").append(formattedProDes);
+        var formattedImg = HTMLprojectImage.replace("%data%", projects.project[index].img);
+        $(".project-entry:last").append(formattedImg);
     }
 }
 projects.display();
@@ -157,17 +158,17 @@ education.display = function() {
         $(".education-entry:last").append(formattedschoolMajor);
     }
 
-          $(".education-entry:last").append(HTMLonlineClasses);
+    $(".education-entry:last").append(HTMLonlineClasses);
 
-    for (var index = 0; index <education.onlineCourses.length; index++) {
-      var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[index].title);
-      $(".education-entry:last").append(formattedOnlineTitle);
-      var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[index].school);
-      $(".education-entry:last").append(formattedOnlineSchool);
-      var formattedOnlineDate = HTMLonlineDates.replace('%data%', education.onlineCourses[index].dates);
-      $('.education-entry:last').append(formattedOnlineDate);
-      var formattedUrl = HTMLonlineURL.replace('%data%', education.onlineCourses[index].url);
-      $('.education-entry:last').append(formattedUrl);
+    for (var index = 0; index < education.onlineCourses.length; index++) {
+        var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[index].title);
+        $(".education-entry:last").append(formattedOnlineTitle);
+        var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[index].school);
+        $(".education-entry:last").append(formattedOnlineSchool);
+        var formattedOnlineDate = HTMLonlineDates.replace('%data%', education.onlineCourses[index].dates);
+        $('.education-entry:last').append(formattedOnlineDate);
+        var formattedUrl = HTMLonlineURL.replace('%data%', education.onlineCourses[index].url);
+        $('.education-entry:last').append(formattedUrl);
     }
 }
 education.display();
