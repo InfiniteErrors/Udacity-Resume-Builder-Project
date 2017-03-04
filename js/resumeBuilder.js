@@ -8,7 +8,7 @@ var bio = {
         "twitter": "@BretPrins",
         "Location": "Edmonton"
     },
-    "welcomeMessage": "Hey there! Welcome to my first attempt at javascript",
+    "welcomeMessage": "Hey there! Welcome to my first attempt at javascript.",
     "skills": ["HTML", "CSS", "JavaScript", "UX Design", "Cisco LAN Networks"],
     "biopic": "images/me.jpg"
 };
@@ -82,6 +82,8 @@ bio.display = function() {
     $("#header").prepend(formattedNameRole);
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedBioPic);
+    var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    $("#header").append(formattedWelcome);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#topContacts, #footerContacts").append(formattedMobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
