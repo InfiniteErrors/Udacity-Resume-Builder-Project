@@ -6,7 +6,7 @@ var bio = {
         "email": "WebDev@gmail.com",
         "github": "InfiniteErrors",
         "twitter": "@BretPrins",
-        "Location": "Edmonton"
+        "location": "Edmonton"
     },
     "welcomeMessage": "Hey there! Welcome to my first attempt at javascript.",
     "skills": ["HTML", "CSS", "JavaScript", "UX Design", "Cisco LAN Networks"],
@@ -99,7 +99,7 @@ bio.display = function() {
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[index]);
         $("#skills").append(formattedSkill);
     }
-}
+};
 bio.display();
 
 
@@ -126,7 +126,7 @@ work.display = function() {
 
 
     }
-}
+};
 work.display();
 
 
@@ -144,7 +144,7 @@ projects.display = function() {
         var formattedImg = HTMLprojectImage.replace("%data%", projects.project[index].imgs);
         $(".project-entry:last").append(formattedImg);
     }
-}
+};
 projects.display();
 
 
@@ -162,17 +162,17 @@ education.display = function() {
 
     $(".education-entry:last").append(HTMLonlineClasses);
 
-    for (var index = 0; index < education.onlineCourses.length; index++) {
-        var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[index].title);
+    for (var i = 0; index < education.onlineCourses.length; i++) {
+        var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[i].title);
         $(".education-entry:last").append(formattedOnlineTitle);
-        var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[index].school);
+        var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[i].school);
         $(".education-entry:last").append(formattedOnlineSchool);
-        var formattedOnlineDate = HTMLonlineDates.replace('%data%', education.onlineCourses[index].dates);
+        var formattedOnlineDate = HTMLonlineDates.replace('%data%', education.onlineCourses[i].dates);
         $('.education-entry:last').append(formattedOnlineDate);
-        var formattedUrl = HTMLonlineURL.replace('%data%', education.onlineCourses[index].url);
+        var formattedUrl = HTMLonlineURL.replace('%data%', education.onlineCourses[i].url);
         $('.education-entry:last').append(formattedUrl);
     }
-}
+};
 education.display();
 
 $("#mapDiv").append(googleMap);
