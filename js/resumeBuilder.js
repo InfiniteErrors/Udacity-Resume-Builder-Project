@@ -162,7 +162,7 @@ education.display = function() {
 
     $(".education-entry:last").append(HTMLonlineClasses);
 
-    for (var i = 0; index < education.onlineCourses.length; i++) {
+    for (var i = 0; i < education.onlineCourses.length; i++) {
         var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[i].title);
         $(".education-entry:last").append(formattedOnlineTitle);
         var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[i].school);
