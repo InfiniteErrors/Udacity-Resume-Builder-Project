@@ -17,12 +17,16 @@ var education = {
     "schools": [{
             "name": "NAIT",
             "location": "Edmonton",
-            "major": "Digital Media IT"
+            "major": "Digotal Media & IT",
+            "degree": "Diploma Program",
+            "dates": "2010"
         },
         {
             "name": "Cisco",
             "location": "Edmonton",
-            "major": "Cisco CCNA"
+            "major": "CCNA",
+            "degree": "Certificate Program",
+            "dates": "2011"
         }
     ],
     "onlineCourses": [{
@@ -45,14 +49,14 @@ var work = {
             "name": "St. Albert Public School Board",
             "title": "Technical Analyst",
             "location": "St. Albert",
-            "date": "2010 - Current",
+            "dates": "2010 - Current",
             "description": "Managing a network or over 1200 daily users and supporting 90+ staff on various technical challenges."
         },
         {
             "name": "St. Albert Aquatics",
             "title": "Lifeguard",
             "location": "St. Albert",
-            "date": "2006 - 2010",
+            "dates": "2006 - 2010",
             "description": "Ensuring public safety and a fantastic customer experience at the pool."
         }
     ]
@@ -61,15 +65,15 @@ var work = {
 var projects = {
     "project": [{
             "title": "Google Chromebooks",
-            "date": "2016",
+            "dates": "2016",
             "description": "Implementing new process and documentation for Google chromebook hardware throughout the schools practices.",
-            "imgs": "images/google.jpg"
+            "images": ["images/google.jpg"]
         },
         {
             "title": "Backend hardware refresh",
-            "date": "2013",
+            "dates": "2013",
             "description": "Replace entire backend infrustructure with new equipment and implement virtualized services via VMware.",
-            "imgs": "images/cisco.jpg"
+            "images": ["images/cisco.jpg"]
         }
     ]
 };
@@ -85,14 +89,11 @@ bio.display = function() {
     var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedWelcome);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    $("#topContacts, #footerContacts").append(formattedMobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    $("#topContacts, #footerContacts").append(formattedEmail);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-    $("#topContacts, #footerContacts").append(formattedGithub);
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-    $("#topContacts, #footerContacts").append(formattedTwitter);
-
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    $("#topContacts, #footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
 
     $("#header").append(HTMLskillsStart);
     for (var index = 0; index < bio.skills.length; index++) {
@@ -100,7 +101,6 @@ bio.display = function() {
         $("#skills").append(formattedSkill);
     }
 };
-bio.display();
 
 
 work.display = function() {
@@ -111,23 +111,17 @@ work.display = function() {
 
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].name);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
-
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
         $(".work-entry:last").append(formattedEmployerTitle);
-
         var formattedEmployerLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
         $(".work-entry:last").append(formattedEmployerLocation);
-
-        var formattedWorkDate = HTMLworkDates.replace("%data%", work.jobs[i].date);
+        var formattedWorkDate = HTMLworkDates.replace("%data%", work.jobs[i].dates);
         $(".work-entry:last").append(formattedWorkDate);
-
         var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
         $(".work-entry:last").append(formattedWorkDescription);
-
-
     }
 };
-work.display();
+
 
 
 projects.display = function() {
@@ -137,15 +131,18 @@ projects.display = function() {
 
         var formattedProTitle = HTMLprojectTitle.replace("%data%", projects.project[index].title);
         $(".project-entry:last").append(formattedProTitle);
-        var formattedProjectDate = HTMLprojectDates.replace("%data%", projects.project[index].date);
+        var formattedProjectDate = HTMLprojectDates.replace("%data%", projects.project[index].dates);
         $(".project-entry:last").append(formattedProjectDate);
         var formattedProDes = HTMLprojectDescription.replace("%data%", projects.project[index].description);
         $(".project-entry:last").append(formattedProDes);
-        var formattedImg = HTMLprojectImage.replace("%data%", projects.project[index].imgs);
-        $(".project-entry:last").append(formattedImg);
+
+        for (var imageNum = 0; imageNum < projects.project[index].images.length; imageNum++) {
+          var formattedImage = HTMLprojectImage.replace("%data%", projects.project[index].images[imageNum]);
+          $(".project-entry:last").append(formattedImage);
+        }
     }
 };
-projects.display();
+
 
 
 education.display = function() {
@@ -158,6 +155,10 @@ education.display = function() {
         $(".education-entry:last").append(formattedschoolLocation);
         var formattedschoolMajor = HTMLschoolMajor.replace('%data%', education.schools[index].major);
         $(".education-entry:last").append(formattedschoolMajor);
+        var formattedschoolDegree = HTMLschoolDegree.replace('%data%', education.schools[index].degree);
+        $(".education-entry:last").append(formattedschoolDegree);
+        var formattedschoolDate = HTMLschoolDates.replace('%data%', education.schools[index].dates);
+        $(".education-entry:last").append(formattedschoolDate);
     }
 
     $(".education-entry:last").append(HTMLonlineClasses);
@@ -173,6 +174,10 @@ education.display = function() {
         $('.education-entry:last').append(formattedUrl);
     }
 };
+
 education.display();
+bio.display();
+projects.display();
+work.display();
 
 $("#mapDiv").append(googleMap);
