@@ -17,14 +17,14 @@ var education = {
     "schools": [{
             "name": "NAIT",
             "location": "Edmonton",
-            "major": "Digotal Media & IT",
+            "majors": ["Digital Media & IT"],
             "degree": "Diploma Program",
             "dates": "2010"
         },
         {
             "name": "Cisco",
             "location": "Edmonton",
-            "major": "CCNA",
+            "majors": ["CCNA"],
             "degree": "Certificate Program",
             "dates": "2011"
         }
@@ -63,7 +63,7 @@ var work = {
 };
 
 var projects = {
-    "project": [{
+    "projects": [{
             "title": "Google Chromebooks",
             "dates": "2016",
             "description": "Implementing new process and documentation for Google chromebook hardware throughout the schools practices.",
@@ -126,18 +126,18 @@ work.display = function() {
 
 projects.display = function() {
 
-    for (var index = 0; index < projects.project.length; index++) {
+    for (var index = 0; index < projects.projects.length; index++) {
         $("#projects").append(HTMLprojectStart);
 
-        var formattedProTitle = HTMLprojectTitle.replace("%data%", projects.project[index].title);
+        var formattedProTitle = HTMLprojectTitle.replace("%data%", projects.projects[index].title);
         $(".project-entry:last").append(formattedProTitle);
-        var formattedProjectDate = HTMLprojectDates.replace("%data%", projects.project[index].dates);
+        var formattedProjectDate = HTMLprojectDates.replace("%data%", projects.projects[index].dates);
         $(".project-entry:last").append(formattedProjectDate);
-        var formattedProDes = HTMLprojectDescription.replace("%data%", projects.project[index].description);
+        var formattedProDes = HTMLprojectDescription.replace("%data%", projects.projects[index].description);
         $(".project-entry:last").append(formattedProDes);
 
-        for (var imageNum = 0; imageNum < projects.project[index].images.length; imageNum++) {
-          var formattedImage = HTMLprojectImage.replace("%data%", projects.project[index].images[imageNum]);
+        for (var imageNum = 0; imageNum < projects.projects[index].images.length; imageNum++) {
+          var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[index].images[imageNum]);
           $(".project-entry:last").append(formattedImage);
         }
     }
@@ -153,12 +153,15 @@ education.display = function() {
         $(".education-entry:last").append(formattedschoolName);
         var formattedschoolLocation = HTMLschoolLocation.replace('%data%', education.schools[index].location);
         $(".education-entry:last").append(formattedschoolLocation);
-        var formattedschoolMajor = HTMLschoolMajor.replace('%data%', education.schools[index].major);
-        $(".education-entry:last").append(formattedschoolMajor);
         var formattedschoolDegree = HTMLschoolDegree.replace('%data%', education.schools[index].degree);
         $(".education-entry:last").append(formattedschoolDegree);
         var formattedschoolDate = HTMLschoolDates.replace('%data%', education.schools[index].dates);
         $(".education-entry:last").append(formattedschoolDate);
+
+        for (var major = 0; major < education.schools[index].majors.length; major++) {
+          var formattedschoolMajor = HTMLschoolMajor.replace('%data%', education.schools[index].majors[major]);
+          $(".education-entry:last").append(formattedschoolMajor);
+        }
     }
 
     $(".education-entry:last").append(HTMLonlineClasses);
