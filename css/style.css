@@ -1,206 +1,289 @@
-body, div, ul, li, p, h1, h2, h3, h4, h5, h6 {
-    padding: 0;
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-family: 'Roboto', sans-serif;
+
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    padding: 0;
 }
 
-.clear-fix {
+.clear-fix
+{
     overflow: auto;
 }
 
-.education-entry, .work-entry, .project-entry {
+.education-entry,
+.work-entry,
+.project-entry
+{
     padding: 0 5%;
 }
 
-h1 {
+h1
+{
     font-size: 40px;
-    color: #7dce94;
     line-height: 48px;
+
     display: inline;
+
+    color: #7dce94;
 }
 
-h2 {
-    font-weight: bold;
+h2
+{
     font-size: 24px;
-    color: #999;
-    line-height: 29px;
-    padding: 10px;
-}
-
-h3 {
-    font-style: italic;
-    font-size: 20px;
-    color: #000;
-    line-height: 22px;
-}
-
-h4 {
     font-weight: bold;
-    font-size: 14px;
-    color: #4a4a4a;
-    line-height: 17px;
+    line-height: 29px;
+
+    padding: 10px;
+
+    color: #999;
 }
 
-h2, h3, h4, h5 {
+h3
+{
+    font-size: 20px;
+    font-style: italic;
+    line-height: 22px;
+
+    color: #000;
+}
+
+h4
+{
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 17px;
+
+    color: #4a4a4a;
+}
+
+h2,
+h3,
+h4,
+h5
+{
     padding: 10px 5%;
 }
 
-.date-text {
-    font-style: italic;
+.date-text
+{
     font-size: 14px;
-    color: #999;
+    font-style: italic;
     line-height: 16px;
+
     float: left;
-}
 
-.location-text {
-    font-style: italic;
-    font-size: 14px;
     color: #999;
-    line-height: 16px;
-    float: right;
 }
 
-p {
+.location-text
+{
     font-size: 14px;
-    color: #333;
-    line-height: 21px;
-}
-
-a {
-    color: #1199c3;
-    text-decoration: none;
-    margin-top: 10px;
-    display: block;
-}
-
-.welcome-message {
     font-style: italic;
+    line-height: 16px;
+
+    float: right;
+
+    color: #999;
+}
+
+p
+{
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #333;
+}
+
+a
+{
+    display: block;
+
+    margin-top: 10px;
+
+    text-decoration: none;
+
+    color: #1199c3;
+}
+
+.welcome-message
+{
     font-size: 18px;
-    color: #f3f3f3;
+    font-style: italic;
     line-height: 28px;
+
+    color: #f3f3f3;
 }
 
-#skills-h3 {
-    color: #7dce94;
+#skills-h3
+{
     display: none;
+
+    color: #7dce94;
 }
 
-.orange {
+.orange
+{
     background-color: #f5ae23;
 }
 
-.blue-text {
+.blue-text
+{
     color: #7dce94;
 }
 
-.white-text {
+.white-text
+{
     font-weight: bold;
+
     color: #fff;
 }
 
-.gray {
-    background-color: #EFEDE7;
-    padding-bottom: 10px;
+.gray
+{
     clear: both;
+
+    padding-bottom: 10px;
+
+    background-color: #efede7;
 }
 
-.dark-blue {
-    background-color: #0E91A1;
+.dark-blue
+{
+    background-color: #0e91a1;
 }
 
-#header {
-    background-color: #146C78;
+#header
+{
+    background-color: #146c78;
 }
 
-.flex-box {
+.flex-box
+{
     display: -webkit-flex;
-    display: flex;
+    display:         flex;
     flex-direction: row;
+
+    padding: 10px;
+
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 10px;
 }
 
-.flex-column {
+.flex-column
+{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+
     padding: 10px;
+
+    flex-wrap: nowrap;
 }
 
-.center-content {
+.center-content
+{
     padding: 2.5% 5%;
 }
 
-ul {
+ul
+{
     list-style-type: none;
 }
 
-.biopic {
-    float: left;
-    padding: 10px;
-    width: 162px;
+.biopic
+{
     display: none;
-    background-size: cover;
-    border-radius: 81px;
+    float: left;
+
+    width: 162px;
+    padding: 10px;
+
     -webkit-border-radius: 81px;
-    -moz-border-radius: 81px;
+       -moz-border-radius: 81px;
+            border-radius: 81px;
+    background-size: cover;
 }
 
-img {
+img
+{
     padding: 10px;
 }
 
-span {
+span
+{
     padding: 5px;
 }
 
-#lets-connect {
+#lets-connect
+{
     text-align: center;
 }
 
 
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
-    #lets-connect {
+@media only screen and (max-width: 1024px)
+{
+    #lets-connect
+    {
         margin-top: 5%;
     }
 }
 
-@media only screen and (max-width:900px) {
-    .biopic {
+@media only screen and (max-width:900px)
+{
+    .biopic
+    {
         width: 175px;
     }
 }
 
-@media only screen and (max-width: 750px) {
-    #lets-connect {
+@media only screen and (max-width: 750px)
+{
+    #lets-connect
+    {
         margin-top: 10%;
     }
-    .biopic {
+    .biopic
+    {
         width: 150px;
     }
-    .welcome-message {
+    .welcome-message
+    {
         display: none;
     }
 }
 
-#map {
+#map
+{
     display: block;
+
     height: 100%;
     margin: 0 5%;
 }
 
-#mapDiv {
-    height: 400px;
+#mapDiv
+{
     width: 100%;
+    height: 400px;
     padding-bottom: 5%;
 }
 
-@media only screen and (min-width: 750px) {
-    #skills-h3, .biopic {
+@media only screen and (min-width: 750px)
+{
+    #skills-h3,
+    .biopic
+    {
         display: block;
     }
 }
